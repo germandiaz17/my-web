@@ -1,0 +1,33 @@
+<section id="contact" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="title-pixel">╔═══</span> {{ ls.t('contact.title') }} <span class="title-pixel">═══╗</span>
+    </h2>
+    <p class="section-subtitle">{{ ls.t('contact.subtitle') }}</p>
+
+    <div class="contact-content">
+      <div class="contact-terminal">
+        <p>
+          <span class="prompt-user">guest</span><span class="prompt-at">@</span><span class="prompt-host">portfolio</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">$</span>
+          <span class="prompt-cmd">echo</span> <span class="contact-string">{{ ls.t('contact.terminalString') }}</span>
+          <span class="prompt-cmd">|</span> <span class="prompt-cmd">mail</span>
+          <span class="contact-string">-s</span> <span class="contact-string">{{ ls.t('contact.subject') }}</span> {{ email }}
+        </p>
+        <p class="contact-response">{{ ls.t('contact.response') }}</p>
+      </div>
+
+      <div class="contact-links">
+        <a [href]="'mailto:' + email" class="btn primary">{{ ls.t('contact.sendEmail') }}</a>
+        <a [href]="github" target="_blank" class="btn secondary">[ github ]</a>
+        <a [href]="linkedin" target="_blank" class="btn secondary">[ linkedin ]</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer-container">
+    <p>© {{ currentYear }} {{ name }} — {{ ls.t('contact.footer') }}</p>
+    <p class="footer-ascii">[ Made with ☕ and ⌨️ ]</p>
+  </div>
+</footer>

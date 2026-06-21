@@ -1,0 +1,18 @@
+<section id="tech" class="section section--alt">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="title-pixel">╔═══</span> {{ ls.t('techStack.title') }} <span class="title-pixel">═══╗</span>
+    </h2>
+    <p class="section-subtitle">{{ ls.t('techStack.subtitle') }}</p>
+
+    <div class="tech-grid">
+      @for (tech of techStack; track tech.name) {
+        <div class="tech-item">
+          <span class="tech-dot">◆</span>
+          {{ tech.name }}
+          <span class="tech-category">{{ tech.category }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

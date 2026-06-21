@@ -48,3 +48,152 @@ img {
   max-width: 100%;
   display: block;
 }
+
+/* ─── Design tokens (responsive hub) ─── */
+:root {
+  --section-padding-y: 5rem;
+  --container-padding-x: 1.5rem;
+  --container-max: 960px;
+
+  /* fluid typography (no media queries needed) */
+  --fs-hero-name: clamp(0.85rem, 5vw, 1.6rem);
+  --fs-hero-role: clamp(0.8rem, 3vw, 1rem);
+  --fs-section-title: clamp(0.55rem, 2.2vw, 0.7rem);
+  --fs-pixel-label: clamp(0.5rem, 1.6vw, 0.55rem);
+  --fs-body: clamp(0.72rem, 2vw, 0.78rem);
+
+  /* responsive grid minimum track sizes */
+  --tech-min: 180px;
+  --card-min: 280px;
+  --course-min: 240px;
+
+  /* space reserved for the fixed bottom nav on mobile */
+  --bottomnav-h: 0px;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding-y: 3.5rem;
+    --container-padding-x: 1.25rem;
+    --tech-min: 140px;
+    --card-min: 100%;
+    --course-min: 100%;
+    --bottomnav-h: 3.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding-y: 2.75rem;
+    --container-padding-x: 1rem;
+    --tech-min: 100%;
+  }
+}
+
+/* ─── Background grid pattern ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ─── Container ─── */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 var(--container-padding-x);
+}
+
+/* ─── Sections ─── */
+.section {
+  padding: var(--section-padding-y) 0;
+}
+
+.section--alt {
+  background: rgba(20, 20, 30, 0.3);
+}
+
+.section-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: var(--fs-section-title);
+  color: #00d4aa;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.title-pixel {
+  color: #2a2a40;
+  font-size: 0.55rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: var(--fs-body);
+  color: #4a4a6a;
+  margin-bottom: 3rem;
+}
+
+/* ─── Buttons ─── */
+.btn {
+  display: inline-block;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(0.5rem, 1.4vw, 0.55rem);
+  padding: 0.75rem 1.25rem;
+  border: 2px solid;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+}
+
+.btn.primary {
+  background: transparent;
+  border-color: #00d4aa;
+  color: #00d4aa;
+}
+
+.btn.primary:hover {
+  background: rgba(0, 212, 170, 0.1);
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.15);
+}
+
+.btn.secondary {
+  background: transparent;
+  border-color: #2a2a40;
+  color: #6a6a8a;
+}
+
+.btn.secondary:hover {
+  border-color: #4a4a6a;
+  color: #c8c8d4;
+}
+
+/* ─── Prompt colors (shared by hero and contact) ─── */
+.prompt-user { color: #4af626; }
+.prompt-at { color: #6a6a8a; }
+.prompt-host { color: #00d4aa; }
+.prompt-colon { color: #6a6a8a; }
+.prompt-path { color: #4a6aff; }
+.prompt-dollar { color: #6a6a8a; }
+.prompt-cmd { color: #c8c8d4; }
+
+/* ─── Reduced motion (accessibility + performance) ─── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

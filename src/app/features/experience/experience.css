@@ -1,0 +1,112 @@
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  padding-top: 0.3rem;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #00d4aa;
+  background: #0a0a0f;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: #00d4aa;
+  box-shadow: 0 0 12px rgba(0, 212, 170, 0.4);
+}
+
+.timeline-line {
+  width: 2px;
+  flex: 1;
+  background: #1a1a2e;
+  min-height: 20px;
+}
+
+.timeline-content {
+  flex: 1;
+  padding-bottom: 2.5rem;
+}
+
+.timeline-meta {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.timeline-period {
+  font-size: var(--fs-pixel-label);
+  color: #00d4aa;
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: 1px;
+}
+
+.timeline-company {
+  font-size: var(--fs-body);
+  color: #4a4a6a;
+}
+
+.timeline-role {
+  font-family: 'Press Start 2P', monospace;
+  font-size: var(--fs-pixel-label);
+  color: #e8e8f0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+.timeline-desc {
+  font-size: var(--fs-body);
+  color: #8a8a9a;
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tech-tag {
+  font-size: var(--fs-pixel-label);
+  color: #00d4aa;
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(0, 212, 170, 0.15);
+  background: rgba(0, 212, 170, 0.05);
+}
+
+/* ─── Mobile: tighten timeline spacing ─── */
+@media (max-width: 480px) {
+  .timeline-item {
+    gap: 1rem;
+  }
+
+  .timeline-content {
+    padding-bottom: 1.75rem;
+  }
+
+  .timeline-meta {
+    gap: 0.4rem;
+  }
+}

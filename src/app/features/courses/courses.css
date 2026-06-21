@@ -1,0 +1,46 @@
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--course-min), 1fr));
+  gap: 1rem;
+}
+
+.course-card {
+  padding: 1.25rem;
+  border: 1px solid #1a1a2e;
+  background: rgba(20, 20, 30, 0.4);
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.course-card:hover {
+  border-color: #4a4a6a;
+}
+
+.course-icon {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.course-name {
+  font-family: 'Press Start 2P', monospace;
+  font-size: var(--fs-pixel-label);
+  color: #e8e8f0;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.5;
+}
+
+.course-institution {
+  font-size: var(--fs-body);
+  color: #8a8a9a;
+  margin-bottom: 0.5rem;
+}
+
+.course-year {
+  font-size: var(--fs-pixel-label);
+  color: #4a4a6a;
+  font-family: 'Press Start 2P', monospace;
+  letter-spacing: 1px;
+  margin-top: auto;
+}

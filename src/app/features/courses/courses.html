@@ -1,0 +1,19 @@
+<section id="courses" class="section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="title-pixel">╔═══</span> {{ ls.t('courses.title') }} <span class="title-pixel">═══╗</span>
+    </h2>
+    <p class="section-subtitle">{{ ls.t('courses.subtitle') }}</p>
+
+    <div class="courses-grid">
+      @for (course of courses(); track course.name) {
+        <div class="course-card">
+          <div class="course-icon">📜</div>
+          <h3 class="course-name">{{ course.name }}</h3>
+          <p class="course-institution">{{ course.institution }}</p>
+          <span class="course-year">[{{ course.year }}]</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
