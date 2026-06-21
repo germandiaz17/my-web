@@ -1,0 +1,78 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: rgba(10, 10, 15, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1a1a2e;
+}
+
+.nav-logo {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.55rem;
+  color: #00d4aa;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  font-size: 0.7rem;
+  color: #6a6a8a;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #00d4aa;
+}
+
+.lang-toggle {
+  background: transparent;
+  border: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  color: #6a6a8a;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: color 0.2s;
+  letter-spacing: 1px;
+}
+
+.lang-toggle:hover {
+  color: #00d4aa;
+}
+
+/* ─── Mobile: links become a fixed bottom bar ─── */
+@media (max-width: 768px) {
+  .nav-links {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    /* near-solid background avoids costly backdrop-filter over scrolling content */
+    background: rgba(10, 10, 15, 0.97);
+    border-top: 1px solid #1a1a2e;
+    padding: 0.6rem 0.4rem;
+    /* respect iOS home indicator / notch */
+    padding-bottom: calc(0.6rem + env(safe-area-inset-bottom));
+  }
+
+  .nav-links a {
+    font-size: 0.62rem;
+    padding: 0.25rem 0.3rem;
+  }
+}

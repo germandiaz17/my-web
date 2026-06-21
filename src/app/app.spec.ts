@@ -14,10 +14,16 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
+  it('should render all section components', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, myWeb');
+    const el = fixture.nativeElement as HTMLElement;
+    expect(el.querySelector('app-nav')).toBeTruthy();
+    expect(el.querySelector('app-hero')).toBeTruthy();
+    expect(el.querySelector('app-tech-stack')).toBeTruthy();
+    expect(el.querySelector('app-projects')).toBeTruthy();
+    expect(el.querySelector('app-experience')).toBeTruthy();
+    expect(el.querySelector('app-courses')).toBeTruthy();
+    expect(el.querySelector('app-contact')).toBeTruthy();
   });
 });
